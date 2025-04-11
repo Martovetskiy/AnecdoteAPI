@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "AnecdoteAPI";
+
+package anecdote;
+
+service AnecdoteService {
+  rpc GetAllAnecdotes (GetAllRequest) returns (GetAllResponse);
+}
+
+message GetAllRequest {}
+
+message GrpcAnecdoteModel {
+  int32 id = 1;
+  string content = 2;
+}
+
+message GetAllResponse {
+  repeated GrpcAnecdoteModel anecdotes = 1;
+}
