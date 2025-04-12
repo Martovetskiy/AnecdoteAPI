@@ -23,7 +23,6 @@ builder.Services.AddGrpc();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 app.MapGrpcService<GreeterService>();
 
 app.MapGrpcService<AnecdoteServiceImpl>();
